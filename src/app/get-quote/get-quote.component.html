@@ -1,0 +1,35 @@
+<div class="container">
+    <h3>Select a product to get Started</h3>
+    
+    <div class="quote">
+        <form class="form-inline" (ngSubmit)="onSubmit(f)" #f="ngForm" ngNativeValidate>
+            <div class="form-group">
+                <select class="form-control" name="products" id="products" [(ngModel)]="selectedProduct" required>
+                    <option value="homeOwners">Home Owners</option>
+                    <option value="auto">Auto</option>
+                    <option value="mediCare">Medi Care</option>
+                </select>
+            </div>
+            <div class="form-group" >
+                <input type="number" class="form-control" id="zip" placeholder="Zip Code" ngModel name="zip" required>
+            </div>
+            
+            <button class="btn btn-danger">Start a Quote</button>
+        </form>
+    </div>
+
+    <div class="row" *ngFor="let quote of Quotes" style="width: 40rem;">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{quote.name}}</h5>
+              <p class="card-text">Network : {{quote.network}}</p>
+              <p class="card-text">Deductible : Rs{{quote.deductible}}</p>
+              <p class="card-text">Principle : Rs{{quote.principle}}</p>
+              <p class="card-text">Time Period : {{quote.timePeriod}}years</p>
+            </div>
+          </div>
+        </div>
+     </div>
+
+</div>

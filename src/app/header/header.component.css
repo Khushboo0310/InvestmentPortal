@@ -1,0 +1,31 @@
+.navbar-nav { 
+    font: Regular 16px/22px Nunito;
+    letter-spacing: 0px;
+    opacity: 1;
+}
+
+.navbar-full {
+    width: 100%;
+}
+
+.navbar-absolute {
+    position: absolute !important;
+    z-index: 2;
+}
+
+.nav-link {
+    color: rgba(0, 0, 0, 0.705) !important;
+}
+
+.navbar-nav a{
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+#header{
+    background:transparent;
+}
+
+.bg-light {
+    background-color: transparent !important;
+}

@@ -1,0 +1,30 @@
+<div class="container">
+    <h3>Find an Agent</h3><br>
+    <div class="findAgent">
+      <form class="form-inline" (ngSubmit)="onSubmit(f)" #f="ngForm" ngNativeValidate>
+          <div class="form-group mx-sm-3 mb-2">
+            <input type="number" class="form-control ng-vaild" pattern="[0-9]{6}" placeholder="ZIP CODE" ngModel name="zipcode" required>
+          </div>
+          <button type="submit" class="btn btn-danger mb-2">Find An Agent</button>
+      </form>
+    </div>
+        <!-- <div>
+            <ul>
+                <li *ngFor="let agent of agents">{{agent.name}} : {{agent.mobile}} : {{agent.email}} : {{agent.address}}</li>
+            </ul>
+        </div> -->
+
+        <div class="row" *ngFor="let agent of agents" style="width: 40rem;">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{agent.name}}</h5>
+                <p class="card-text">{{agent.mobile}}</p>
+                <p class="card-text">{{agent.email}}</p>
+                <p class="card-text">{{agent.address}}</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    
+</div>

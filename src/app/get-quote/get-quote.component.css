@@ -1,0 +1,23 @@
+.form-group{
+    margin-right: 10px;
+}
+
+input{
+    margin-right: 10px;
+}
+
+.container h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 35px;
+}
+
+.quote{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+}

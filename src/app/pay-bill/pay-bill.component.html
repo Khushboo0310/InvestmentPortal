@@ -1,0 +1,54 @@
+
+<div class="container">
+
+    <h3>Pay Insurance Bill</h3>
+
+    <div class="billing">
+        <form class="form-inline" (ngSubmit)="open()" ngNativeValidate>
+            <div class="form-group">
+                <select class="form-control" name="payment-method" id="paymemt" [(ngModel)]="selectedValue">
+                    <option value="phoneNumber">Phone Number</option>
+                    <option value="policyNumber">Policy Number</option>
+                    <option value="keyCode">Key Code</option>
+                </select>
+            </div>
+            <div class="form-group" *ngIf="selectedValue == 'phoneNumber'">
+                <input type="number" class="form-control" id="phoneNumber" placeholder="Phone Number" required>
+                <input type="text" class="form-control" id="dob" placeholder="Date of Birth"  onfocus="(this.type='date')" required>
+            </div>
+            <div class="form-group" *ngIf="selectedValue == 'policyNumber'">
+                <input type="number" class="form-control" id="policyNumber" placeholder="Policy Number" required>
+                <input type="number" class="form-control" id="zip" placeholder="Zip Code" required>
+            </div>
+            <div class="form-group" *ngIf="selectedValue == 'keyCode'">
+                <input type="number" class="form-control" id="keyCode" placeholder="Key Code" required>
+            </div>
+            <button class="btn btn-danger" >Pay Now</button>
+        </form>
+    </div>
+</div>
+
+
+<ng-container #vc></ng-container>
+
+<ng-template #modal_1>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"> 
+                    <h4 class="modal-title" id="myModalLabel"> SUCCESS
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times; </button>
+                </div>
+                <div class="modal-body"> Payment Successful!! </div>
+                <div class="modal-footer"> 
+                    <button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeDialog()">Close </button> 
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>   
+</ng-template>
+
